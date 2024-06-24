@@ -1,0 +1,126 @@
+@import 'variables';
+
+footer {
+  position: relative;
+  z-index: 100;
+  background: $black;
+  color: white;
+  padding: 30px 15%;
+  font-size: .8rem;
+
+  @include mobile {
+    padding: 50px;
+    font-size: 1.3rem;
+  }
+
+  h3 {
+    font-weight: bold;
+    font-family: DINPRO;
+    border-bottom: 1px solid white;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+  }
+
+  .wrapper {
+    @include flex(row, center, flex-start);
+
+    @include mobile {
+      flex-direction: column;
+    }
+
+    div {
+      width: 25%;
+
+      @include mobile {
+        width: 100%;
+      }
+    }
+
+    div.footer-section {
+      margin-right: 30px;
+
+      @include mobile {
+        margin-bottom: 20px;
+        margin-right: 0;
+      }
+
+      ul {
+        margin-top: 10px;
+
+        li {
+          margin-bottom: 3px;
+          transition: all .1s ease-in-out;
+
+          button {
+            background: none;
+            border: none;
+            color: white;
+            font-weight: 600;
+
+            @include mobile {
+              font-size: 1.3rem;
+            }
+          }
+
+          ul.lv-two {
+            margin: 5px 10px;
+            max-height: 1px;
+            overflow: hidden;
+            transition: all .5s 0s ease-out;
+
+            /* * {
+              font-size: 12px;
+            } */
+            &.active {
+              max-height: 999px;
+            }
+
+            @include mobile {
+              margin: 10px 15px;
+
+              li {
+                margin-bottom: 10px;
+              }
+            }
+          }
+
+          /* &:hover {
+            margin-left: 5px;
+          } */
+        }
+      }
+    }
+
+    .social {
+      // place-self: center;
+      @include flex(column);
+
+      .social-container {
+        margin: 0;
+      }
+
+      button {
+        @include flex;
+        border: none;
+        background: none;
+        color: white;
+        padding: 3px 10px;
+        font-size: 14px;
+
+        &:hover {
+          text-decoration: underline;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.copyright {
+  font-size: .8rem;
+  font-weight: bold;
+  padding: 5px;
+  text-align: center;
+  color: white;
+  background-color: $black;
+}

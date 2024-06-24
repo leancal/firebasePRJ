@@ -1,0 +1,51 @@
+{
+  "name": "aiwaelectronics",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "preexport": "rimraf out",
+    "export": "next build && next export"
+  },
+  "dependencies": {
+    "@emotion/memoize": "^0.8.1",
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
+    "@firebase/firestore": "^4.2.0",
+    "@hotjar/browser": "^1.0.9",
+    "@mui/icons-material": "^5.10.3",
+    "@mui/material": "^5.10.3",
+    "@sendgrid/mail": "^7.7.0",
+    "bootstrap": "^5.3.1",
+    "caniuse-lite": "^1.0.30001477",
+    "express": "^4.18.2",
+    "firebase": "^10.4.0",
+    "firebase-admin": "^11.10.1",
+    "next": "^13.5.6",
+    "nodemailer-react": "^1.0.2",
+    "plaiceholder": "^2.5.0",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.8.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.15.0",
+    "react-scroll-to-top": "^3.0.0",
+    "react-svg-spinners": "^0.3.1",
+    "react-zoom-pan-pinch": "^2.6.1",
+    "sharp": "^0.31.3",
+    "sib-api-v3-sdk": "^8.4.2",
+    "styled-components": "^6.0.7",
+    "swiper": "^8.3.2",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.22.20",
+    "@svgr/webpack": "^6.5.1",
+    "eslint": "8.23.0",
+    "eslint-config-next": "^13.1.1",
+    "rimraf": "^5.0.5",
+    "sass": "^1.66.1"
+  }
+}

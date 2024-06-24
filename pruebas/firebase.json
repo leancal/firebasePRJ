@@ -1,0 +1,10 @@
+{
+    "hosting": {
+        "rewrites": [
+            {
+                "source": "/productos/:sku",
+                "destination": "/productos/[sku]"
+            }
+        ]
+    }
+}

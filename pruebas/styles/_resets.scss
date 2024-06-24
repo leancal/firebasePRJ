@@ -1,0 +1,155 @@
+@import 'variables';
+
+html {
+  scroll-behavior: smooth;
+
+  body {
+    height: 100vh;
+  }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: MuseoSans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  text-decoration: none;
+  list-style-type: none;
+  box-sizing: border-box;
+  font-variant-ligatures: none
+}
+
+a {
+  color: inherit;
+}
+
+a.anchor {
+  display: block;
+  position: relative;
+  top: -250px;
+  visibility: hidden;
+
+  @include mobile {
+    top: -70px;
+  }
+}
+
+button {
+  cursor: pointer;
+}
+
+.image-previews {
+  width: 85px;
+  margin: 7px 7px 1px 7px;
+  background-color: aqua;
+  background-size: auto;
+  border-radius: 10px;
+}
+
+.image-previewsEdits {
+  width: 150px;
+  margin: 7px 7px 1px 7px;
+  background-color: aqua;
+  background-size: auto;
+  border-radius: 10px;
+}
+
+.image-previews-banner {
+  width: 290px;
+  margin: 7px 7px 1px -2px;
+  background-color: aqua;
+  background-size: auto;
+  border-radius: 10px;
+}
+
+.image-preview-container {
+  display: table;
+}
+
+.checkForm {
+  display: grid;
+  color: white;
+  grid-template-columns: repeat(3, 33%);
+  grid-auto-rows: 23px;
+  font-size: 14px;
+}
+
+.checkFormIncludes {
+  display: grid;
+  color: white;
+  grid-template-columns: repeat(3, 33%);
+  grid-auto-rows: 58px;
+  font-size: 14px;
+}
+
+.imgIncludes {
+  border-radius: 10px;
+}
+
+.checkFormIncludes {
+  display: grid;
+  color: white;
+  grid-template-columns: repeat(3, 33%);
+  grid-auto-rows: 58px;
+  font-size: 14px;
+}
+
+.featuresSelectedFather {
+  display: flex;
+  flex-direction: column;
+}
+
+.featuresSelected {
+  margin: 11px 0 0px 0;
+  color: rgb(255, 255, 255);
+  align-items: center;
+}
+
+.featuredFeaturesSelected {
+  display: flex;
+  margin: 11px 0 0px 0;
+  color: rgb(255, 255, 255);
+  align-items: center;
+}
+
+
+@media (max-width: 850px) {
+  .pc-only {
+    display: none !important;
+  }
+}
+
+@media (min-width: 850px) {
+  .mobile-only {
+    display: none !important;
+  }
+}
+
+.d-none {
+  display: none;
+}
+
+.d-block {
+  display: block;
+}
+
+.not-visible {
+  opacity: 0;
+}
+
+.visible {
+  opacity: 1;
+}
+
+.not-draggable {
+  -webkit-user-select: none;
+  /* Safari 3.1+ */
+  -moz-user-select: none;
+  /* Firefox 2+ */
+  -ms-user-select: none;
+  /* IE 10+ */
+  user-select: none;
+  /* Standard syntax */
+  user-drag: none;
+  -webkit-user-drag: none;
+}

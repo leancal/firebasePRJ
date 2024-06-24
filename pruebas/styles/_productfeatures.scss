@@ -1,0 +1,157 @@
+@import 'variables';
+
+section.product-features {
+  overflow: hidden;
+  width: 100%;
+  background-color: white;
+  box-shadow: $lightShadow;
+
+  @include pc {
+    @include flex;
+  }
+
+  div.left {
+    padding: 40px 50px;
+    background: $blackDeg;
+    z-index: 9;
+    position: relative;
+    @include flex(column);
+
+    @include pc {
+      width: 45%;
+    }
+
+    div.icons {
+      max-width: 350px;
+      width: 100%;
+      @include flex(row, space-between);
+      flex-wrap: wrap;
+
+      div.button-wrapper {
+        @include flex;
+        width: 25%;
+        margin-top: 25px;
+
+        button {
+          box-shadow: $strongShadow;
+          -webkit-tap-highlight-color: transparent;
+          padding: 5px;
+          border: none;
+          background: $whiteDegInv;
+          border-radius: 100%;
+          @include hoverScale(1.05);
+
+          path,
+          circle,
+          rect {
+            color: inherit;
+            background: inherit;
+            fill: inherit !important;
+          }
+
+          div.background {
+            border-radius: 100%;
+            padding: 10px 10px 6px 10px;
+            width: 100%;
+            height: 100%;
+            background: $whiteDeg;
+          }
+
+          &.active {
+            background: $altDeg;
+            color: white;
+            transform: scale(1.1);
+            box-shadow: $extremeShadow;
+
+            div.background {
+              background: $altDegInv;
+            }
+          }
+
+          &:active {
+            transform: scale(1.2);
+          }
+        }
+      }
+    }
+
+    p {
+      font-family: DINPRO;
+      text-align: center;
+      font-size: 16px;
+      color: white;
+    }
+  }
+
+
+
+  div.right {
+    height: 100%;
+    background-color: white;
+    flex-grow: 1;
+    padding: 40px 80px;
+    position: relative;
+
+    @include mobile {
+      padding: 40px;
+    }
+
+    @include flex;
+
+    div.icon-shadow {
+      position: absolute;
+      right: -50px;
+      opacity: .07;
+
+      svg {
+        width: 450px;
+        height: 450px;
+
+        @include mobile {
+          width: 150px;
+        }
+      }
+    }
+
+
+
+    div.content {
+      @include flex;
+
+      .iconFeature {
+        width: 120px;
+        height: 120px;
+        color: $alt !important;
+        fill: $alt !important;
+        margin-bottom: -10px;
+
+        path,
+        circle,
+        rect {
+          color: $alt !important;
+          fill: $alt !important;
+        }
+      }
+
+      div.text {
+        margin-left: 20px;
+        max-width: 500px;
+        z-index: 9;
+
+        @include pc {
+          width: 500px;
+        }
+
+        @include mobile {
+          width: 75%;
+        }
+
+        h2 {
+          font-family: DINPRO;
+          font-size: 35px;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+@import 'variables';
+
+section.lines {
+  @include flex;
+  flex-wrap: wrap;
+  .line-container {
+    @include flex(column, flex-start, center);
+    box-shadow: inset 0px 0px 15px rgb(0 0 0 / 60%);
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 400px;
+    min-width: 50%;
+    max-width: 100%;
+    flex-grow: 1;
+    position: relative;
+    overflow: hidden;
+    &:hover > img.bg {
+      transform: scale(1.1);
+    }
+    @include mobile {
+      min-width: 100%;
+    }
+    img.bg {
+      object-fit: cover;
+      z-index: -1;
+      transition: all 1s ease;
+    }
+    button {
+      @include btn(rgba(0,0,0,.5), white);
+      border: 1px solid white;
+    }
+    .line-image-wrapper {
+      width: 220px;
+      height: 120px;
+      position: relative;
+      margin-top: 50px;
+      margin-bottom: 10px;
+      img {
+        object-fit: contain;
+      }
+    }
+  }
+}

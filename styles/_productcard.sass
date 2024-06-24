@@ -1,0 +1,125 @@
+@import 'variables'
+
+$line: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(220,220,220,1) 50%, rgba(255,255,255,1) 100%)
+
+.product-card
+  @include flex(column)
+  @include hoverScale(1.05)
+  background-color: white
+  width: 250px
+  border-radius: 5px
+  box-shadow: $shadow
+  padding: 20px
+  position: relative
+  @include mobile
+    flex-direction: row
+    width: 85%
+    padding: 10px
+  & > svg
+    position: absolute
+    top: 10px
+    left: 10px
+    opacity: .2
+  a 
+    @include flex
+    .image
+      @include flex
+      width: 150px
+      height: 150px
+      @include mobile
+        margin-right: 5px
+  .texts
+    @include flex(column)
+    margin-top: 5px
+    @include pc
+      &::before
+        content: ''
+        height: 2px
+        width: 100%
+        border-radius: 100%
+        background: $line
+    @include mobile
+      align-items: flex-start
+      margin-right: 15px
+    a.p-download-button
+      @include flex
+      font-size: 12px
+      font-weight: 600
+      @include mobile
+        margin-top: 5px
+        margin-bottom: 10px
+      @include pc
+        margin-top: 5px
+      &:hover
+        text-decoration: underline
+      svg
+        margin-right: 5px
+        width: 15px
+        height: 15px
+    p
+      font-size: 13px
+      font-weight: bold
+      font-family: DINPRO
+      text-align: center
+      @include mobile
+        text-align: left
+      &.p-name
+        font-size: 16px
+        @include mobile
+          font-size: 15px
+          line-height: 15px
+      &.p-sku
+        margin-top: 10px
+        margin-bottom: 5px
+        font-size: 12px
+        color: $black
+        @include mobile
+          //display:none;
+      &.p-desc
+        font-weight: 500
+        font-size: 15px
+        color: grey
+    .p-tags
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+      margin: 5px 0 5px 0
+      @include mobile
+        margin-bottom: 5px
+      span
+        margin-top: 5px
+        display: flex
+        align-items: center
+        font-size: 12px
+        border-radius: 100px
+        padding: 2px 8px
+        color: white !important
+        svg
+          fill: white !important
+          width: 14px
+          height: 14px
+          margin-right: 3px
+  button.see-more
+    @include btn(white, $black, 1px solid $black)
+    @include hoverScale(1)
+    margin-bottom: 20px
+    @include mobile
+      display: none
+  button.options-menu
+    @include flex
+    background: none
+    border: none
+    font-weight: 600
+    color: #333
+    svg
+      width: 20px
+
+a.search-menu-link
+  @include flex(row, flex-start)
+  margin-right: 8px
+  svg
+    fill: #888
+    width: 25px
+    margin-right: 10px
+    margin-bottom: 1px

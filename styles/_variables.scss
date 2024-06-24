@@ -1,0 +1,25 @@
+/* Colors */
+$main: #222;
+$mainDark: #222;
+$black: #222;
+$mainDeg: linear-gradient(120deg, $mainDark 0%, $main 100%);
+$blackDeg: linear-gradient(60deg, #222, #2d2d2d);
+$blackDegVert: linear-gradient(180deg, #222, #2d2d2d);
+$greenDeg: radial-gradient(circle, rgba(20,61,20,1) 0%, rgba(4,34,34,1) 100%);
+$white: #f2f2f2;
+$alt: #e02327;
+$altDark: #920711;
+$altDeg: linear-gradient(60deg, $altDark 0%, $alt 100%);
+$altDegInv: linear-gradient(240deg, $altDark 0%, $alt 100%);
+$whiteDeg: linear-gradient(180deg, #d2d2d1, #fff);
+$whiteDegInv: linear-gradient(90deg, #d2d2d1, #fff);
+$breakPoint: 850px; //Tamaño que divide versiones pc y mobile
+$lightShadow: rgba(99, 99, 99, 0.05) 0px 2px 8px 0px;
+$shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+$strongShadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+$extremeShadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+$divider: 2px solid white;
+$lowOpacWhite: rgba(255,255,255,.05);
+
+/* Estilos de Líneas (Ring, Flama, etc) */
+$ringDeg: linear-gradient(118deg, rgb(229 37 197) 0%, rgb(10 90 197) 100%);

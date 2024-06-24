@@ -1,0 +1,111 @@
+@import 'variables';
+
+section.top-wrapper {
+  div.product-more-photos {
+    @include mobile {
+      padding-top: 120px;
+    }
+    user-select: none;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(228, 228, 228, 1) 20%,
+      rgba(255, 255, 255, 1) 100%
+    );
+    div.thumbnails {
+      @include flex(row, flex-start);
+      flex-wrap: wrap;
+      margin: 15px;
+      gap: 10px;
+      z-index: 9;
+      @include pc {
+        margin: 45px 50px;
+        justify-content: flex-start;
+        flex-wrap: wrap-reverse;
+        width: 320px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+      @include mobile {
+        padding: 15px;
+        height: 150px;
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+      button {
+        -webkit-tap-highlight-color:  rgba(255, 255, 255, 0); 
+        width: 31%;
+        margin-bottom: -2px;
+        border: none;
+        background: none;
+        transition: all .1s ease-in-out;
+        @include mobile {
+          width: 120px;
+        }
+        &:hover {
+          filter: drop-shadow(0px 2px 8px 0px rgba(99, 99, 99, 0.2));
+        }
+        &:active {
+          border: none;
+          background-color: transparent;
+        }
+      }
+      span {
+        background-color: white;
+        border-radius: 5px;
+        @include hoverScale;
+      }
+      img {
+        background-color: white;
+      }
+    }
+    div.text {
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: 45px 50px;
+      max-width: 400px;
+      color: $black;
+      z-index: 9;
+      h1 {
+        font-size: 40px;
+        font-family: DINPRO;
+      }
+      p.sku {
+        font-weight: bold;
+        font-family: DINPRO;
+      }
+    }
+    div.more-photos {
+      width: 550px;
+      height: 550px;
+      &[active="true"]{
+        width: 840px;
+        height: 840px;
+      }
+      button.fs-btn {
+        position: absolute;
+        top: 40px;
+        right: 40px;
+        z-index: 9;
+        border: none;
+        background: none;
+        &.active {
+          color: $alt
+        }
+        @include mobile {
+          display: none;
+        }
+      }
+      @include mobile {
+        width: 400px;
+        height: 400px;
+      }
+      text-align: center;
+      --swiper-theme-color: #333;
+    }
+  }
+}

@@ -1,0 +1,196 @@
+@import 'variables';
+
+.modal {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,.7);
+  backdrop-filter: blur(10px);
+  animation: .2s ease-out openModal;
+  z-index: 1000;
+  padding: 30px;
+  @include flex(column, flex-start, flex-end);
+  &>li:nth-of-type(1){ 
+    margin-top: 30px;
+  }
+  li {
+    text-align: right;
+    margin-bottom: 10px;
+
+    a {
+      margin-bottom: 15px;
+    }
+  }
+  button {
+    background: none;
+    border: none;
+    color: white;
+    &.buscar {
+      margin-top: 8px;
+      margin-right: -5px;
+      svg {
+        width: 50px;
+        height: 50px;
+      }
+    }
+  }
+  li>button {
+    font-size: 40px;
+    font-weight: bold;
+    font-family: DINPRO, sans-serif;
+  }
+  .nav-hover {
+    @include flex(column, flex-start, flex-end);
+    // animation: .5s ease-out openHeight;
+    transition: all .3s ease-in-out;
+    max-height: 0px;
+    opacity: 0;
+    margin-top:10px;
+    color:white;
+    font-size: 30px;
+    overflow: hidden;
+    &.active {
+      max-height: 300px;
+      opacity: 1;
+    }
+  }
+  .social-container {
+    margin-top: auto;
+    margin-right: 20px;
+    color:white;
+    svg {
+      width: 50px;
+      height: 50px;
+    }
+    @include mobile {
+      margin: auto 0 0 0 !important
+    }
+  }
+}
+header {
+  height: 88px;
+  @include mobile {
+    height: 75px;
+  }
+  nav {
+    @include flex(row, flex-start);
+    background: rgba(0,0,0,.9);
+    width: 100%;
+    padding: 20px 20px 15px 30px;
+    color: white;
+    font-size: 20px;
+    box-shadow: rgb(0 0 0 / 35%) 0px 0px 10px 0px;
+    border-bottom: $divider;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+  
+    @include mobile {
+      justify-content: space-between;
+    }
+  
+    button {
+      background: none;
+      border: none;
+      color: inherit;
+      &:hover {
+        border-bottom: 2px groove white;
+        margin-bottom: -1px;
+        font-weight: bolder;
+      }
+      &[active="true"]{
+        color: $alt;
+        font-weight: bolder;
+        /* border-bottom: 2px groove $alt;
+        margin-bottom: -1px; */
+        
+      }
+    }
+  
+    img {
+      min-width: 150px;
+      transition: all .3s ease-in-out;
+      @include mobile{
+        min-width: 100px;
+      }
+    }
+  
+    ul {
+      @include flex(row, flex-start);
+      margin-left: 30px;
+  
+      li {
+        margin-right: 15px;
+        position: relative;
+  
+        .nav-hover {
+          @include flex(column, flex-start, stretch);
+          background-color: $black;
+          border-radius: 2px;
+          box-shadow: $strongShadow;
+          position: absolute;
+          z-index: 999;
+          left: -20px;
+          color: $black;
+          min-width: 180px;
+          animation: openModal .2s ease-out;
+          display:none;
+          &.active {
+            display:flex;
+          }
+          a {
+            @include hoverMarginLeft;
+            padding: 5px 20px;
+            font-size: 16px;
+            font-family: DINPRO;
+            font-weight: bold;
+            color:white;
+            &:hover {
+              color: $alt;
+            }
+            &:first-of-type {
+              padding-top: 18px;
+            }
+            &:last-of-type {
+              padding-bottom: 18px;
+            }
+          }
+        }
+        
+        &>button, &>button>a {
+          cursor: pointer;
+          font-size: 16px;
+          font-family: DINPRO;
+        }
+      }
+    }
+    .right-zone {
+      @include flex(row, center, center);
+      margin-left: auto;
+      button.buscar {
+        margin-left: 15px;
+      }
+    }
+  }
+  
+  li.gaming {
+    @supports not (-webkit-touch-callout: none) {
+      // not ios
+      background: linear-gradient( to right, #8aff0a 0%, #74cc13 20%, #2dc339 40%, #2dc339 60%, #8aff0a 80% );
+      background-size: 200% auto;
+      color: #000;
+      background-clip: text;
+      text-fill-color: transparent;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shine 2s linear infinite;
+    }
+    @supports (-webkit-touch-callout: none) {
+      // ios
+      color: #2dc339
+    }
+    * {
+      font-weight: 600;
+    }
+  }
+}

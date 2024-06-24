@@ -1,0 +1,48 @@
+@import 'variables';
+
+/*Mixins*/
+@mixin flex($dir: row, $justify: center, $align: center){
+  display: flex;
+  flex-direction: $dir;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin mobile {
+  @media (max-width: $breakPoint) { @content; }
+}
+@mixin pc {
+  @media (min-width: $breakPoint) { @content; }
+}
+
+@mixin hoverScale($intensity: 1.1) {
+  transition: all .1s ease-out;
+  &:hover {
+    transform: scale($intensity);
+  }
+}
+
+@mixin hoverMarginLeft($intensity: 10px) {
+  transition: all .1s ease-out;
+  &:hover {
+    margin-left: $intensity;
+  }
+}
+
+@mixin btn($bg, $text, $border: none){
+  @include hoverScale;
+  margin: 10px;
+  padding: 7px 15px;
+  font-size: 16px;
+  font-family: MuseoSans;
+  font-weight: bold;
+  border: $border;
+  border-radius: 2px;
+  box-shadow: $shadow;
+  color: $text;
+  background: $bg;
+  cursor: pointer;
+  &:hover {
+    box-shadow: $strongShadow;
+  }
+}

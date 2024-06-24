@@ -1,0 +1,103 @@
+@import 'variables';
+
+a.main-banner {
+  position: relative;
+  figure {
+    position: relative;
+    img {
+      object-fit: cover;
+    }
+  }
+  figure.desktop {
+    img {
+      width: 100%;
+      height: 100%;
+      margin-bottom: -4px;
+    }
+  }
+  figure.mobile {
+    background: $mainDeg;
+    height: 150px;
+    // height: 600px;
+    display:none !important;
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  @include mobile {
+    figure.mobile {
+      height: 600px;
+      display:block !important;
+    }
+    figure.desktop {
+      display:none !important;
+    }
+  }
+  div.text {
+    z-index: 10;
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    color: white;
+    padding: 50px 100px;
+    &.dark {
+      color: $main;
+    }
+    @include mobile {
+      margin-top: 30px;
+      padding: 30px 50px;
+      * {
+        text-align: center;
+      }
+    }
+    h2 {
+      font-family: 'Barlow', sans-serif;
+      font-size: 40px;
+      @include mobile {
+        font-size: 30px;
+      }
+    }
+    h3 {
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 400;
+      font-size: 18px;
+      max-width: 350px;
+    }
+    h2, h3 {
+      filter: drop-shadow(-2px 2px 2px rgba(0,0,0,.3));
+    }
+    button {
+      @include btn($altDeg, white);
+      margin: 10px 0;
+      transition: all .1s ease-out;
+      &:active {
+        transform: translateY(5px);
+      }
+    }
+    @include flex(column);
+  
+    @include pc {
+      &[align='center'] {
+        align-items: center;
+      }
+      &[align='right'] {
+        align-items: flex-end;
+      }
+      &[align='left'] {
+        align-items: flex-start;
+      }
+    }
+  
+    &[valign='top'] {
+      justify-content: flex-start;
+    }
+    &[valign='bottom'] {
+      justify-content: flex-end;
+    }
+    &[valign='center'] {
+      justify-content: center;
+    }
+  }
+}

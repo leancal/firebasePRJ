@@ -1,0 +1,222 @@
+@import 'variables';
+
+section.product-page {
+  section.top-wrapper {
+    overflow: hidden;
+    position: relative;
+    div.default {
+      @include flex(row);
+      width: 100%;
+      height: 100%;
+      background-image: url('https://aiwaelectronics.com.ar/fileserver/backgrounds/sin-linea.webp');
+      background-position: center;
+      background-size: cover;
+      &.bg-alt {
+        background-image: url('https://aiwaelectronics.com.ar/fileserver/backgrounds/sin-linea-alt.webp');
+      }
+      @include mobile {
+        background-image: url('https://aiwaelectronics.com.ar/fileserver/backgrounds/sin-linea-mob.webp');
+        background-position: center;
+        background-repeat: no-repeat;
+        align-items: center;
+        flex-direction: column-reverse;
+        &.bg-alt {
+          background-image: url('https://aiwaelectronics.com.ar/fileserver/backgrounds/sin-linea-mob-alt.webp');
+        }
+      }
+      @include pc {
+        padding-left: 20%;
+      }
+      .cover-wrapper {
+        width: 100%;
+        height: 500px;
+        position: relative;
+        @include mobile {
+          height: 400px;
+        }
+        .cover {
+          object-position: bottom;
+          object-fit: contain;
+          filter: drop-shadow(0px 0px 30px rgba(0,0,0,.1));
+        }
+      }
+      div.text-wrapper {
+        width: 100%;
+        height: 100%;
+        @include flex(row, flex-start);
+        @include pc {
+          padding-left: 0%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 5;
+        }
+        @include mobile {
+          border-top: 2px solid white; 
+        }
+        div.text {
+          max-width: 35%;
+          padding: 40px;
+          background-color: rgba(0,0,0,.7);
+          color:white;
+          border-radius: 0 5px 5px 0;
+          transition: all .3s ease-in-out;
+          font-size: 13px;
+          @include pc {
+            padding-left: 5%;
+          }
+          @include mobile {
+            text-align: center;
+            max-width: fit-content;
+            border-radius: 0;
+            background-color: rgba(0,0,0,.8);
+          }
+          div.line-logo{
+            position: relative;
+            width: 150px;
+            height: 55px;
+            margin-bottom: 15px;
+            @include mobile {
+              margin: auto;
+              img {
+                object-position: center !important;
+              }
+            }
+          }
+          p.sku {
+            font-weight: bold;
+            font-size: 14px;
+            font-family: DINPRO;
+          }
+          h1 {
+            font-size: 35px;
+            font-family: DINPRO;
+            margin-bottom: 5px;
+            @include mobile {
+              font-size: 40px;
+            }
+          }
+          &:hover {
+            padding-top: 50px;
+            padding-bottom: 50px;
+            background-color: rgba(0,0,0,.75);
+            box-shadow: $extremeShadow;
+          }
+        }
+      }
+      &[linea=ring] {
+        background-image: url('https://aiwaelectronics.com.ar/fileserver/backgrounds/ring.webp');
+        background-position: center;
+        background-size: cover;
+        @include mobile {
+          background-image: url('https://aiwaelectronics.com.ar/fileserver/backgrounds/ring-mob.webp');
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+      }
+      &[linea=infinit] {
+        background-image: url('https://aiwaelectronics.com.ar/fileserver/backgrounds/infinit.webp');
+        background-position: center;
+        background-size: cover;
+        @include mobile {
+          background-image: url('https://aiwaelectronics.com.ar/fileserver/backgrounds/infinit-mob.webp');
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+      }
+      &[linea=flama] {
+        background-image: url('https://aiwaelectronics.com.ar/fileserver/backgrounds/flama.webp');
+        background-position: center;
+        background-size: cover;
+        @include mobile {
+          background-image: url('https://aiwaelectronics.com.ar/fileserver/backgrounds/flama-mob.webp');
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+      }
+      &[linea=party] {
+        background-image: url('https://aiwaelectronics.com.ar/fileserver/backgrounds/party.webp');
+        background-position: center;
+        background-size: cover;
+        @include mobile {
+          background-image: url('https://aiwaelectronics.com.ar/fileserver/backgrounds/party-mob.webp');
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+      }
+      
+    }
+    div.always-on-top {
+      top: 5px;
+      height: 100%;
+      position: absolute;
+      z-index: 99;
+      right: 0px;
+      @include flex(column, flex-start, flex-end);
+      @include pc {
+        right: 5px;
+        justify-content: center;
+        &.video-open {
+          justify-content: flex-start;
+          margin-top: 70px;
+          height: auto;
+        }
+      }
+      button {
+        margin-bottom: 5px;
+        background-color: white;
+        border: none;
+        box-shadow: $lightShadow;
+        border-radius: 3px 0 0 3px;
+        padding: 5px 10px;
+        @include flex(row, space-between);
+        @include pc{
+          border-radius: 3px;
+          min-width: 165px;
+        }
+        span {
+          font-family: DINPRO;
+          font-weight: bold;
+          font-size: 18px;
+          flex-grow: 1;
+          text-align: left;
+          margin-left: 9px;
+        }
+        &.video {
+          position: relative;
+          .three-sixty {
+            max-width: 40px;
+            position: absolute;
+            margin: 10px 12px;
+            opacity: .9;
+            left: 0px;
+            bottom: 0px;
+          }
+        }
+        &.to-right {
+          transition: all .2s ease-in-out;
+          height: 45px;
+          @include pc {
+            &:hover {
+              right: 0px;
+              height: 55px;
+            }
+          }
+          @include mobile {
+            position: relative;
+            @include pc {
+              right: -85px;
+            }
+            @include mobile {
+              height: 60px;
+              svg {
+                height: 30px;
+                width: 30px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
